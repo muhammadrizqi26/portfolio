@@ -83,3 +83,35 @@
   --pad-y:  clamp(4.5rem, 9vw, 7rem);
   --nav-h:  70px;
 }
+
+/* ================================================================
+   LIGHT MODE TOKENS
+   ================================================================ */
+[data-theme="light"] {
+  --bg-0:          #f0f4ff;
+  --bg-1:          #e5eaf8;
+  --bg-card:       rgba(255, 255, 255, 0.85);
+  --bg-card-solid: #ffffff;
+
+  --accent:        #0099aa;
+  --accent-2:      #4f46e5;
+  --accent-3:      #7c3aed;
+  --accent-dim:    rgba(0, 153, 170, 0.10);
+  --accent-border: rgba(0, 153, 170, 0.25);
+  --grad-accent:   linear-gradient(135deg, var(--accent) 0%, var(--accent-3) 100%);
+  --grad-soft:     linear-gradient(135deg, rgba(0,153,170,0.08) 0%, rgba(124,58,237,0.08) 100%);
+
+  --text-1: #0d1117;
+  --text-2: #2d3748;
+  --text-3: #4a5568;
+  --text-4: #718096;
+
+  --border:       rgba(0, 0, 0, 0.09);
+  --border-light: rgba(0, 0, 0, 0.16);
+
+  --sh-sm:     0 2px 8px rgba(0,0,0,0.10);
+  --sh-md:     0 4px 20px rgba(0,0,0,0.13);
+  --sh-lg:     0 8px 40px rgba(0,0,0,0.18);
+  --sh-accent: 0 0 28px rgba(0,153,170,0.20);
+  --sh-card:   0 4px 24px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.80);
+}

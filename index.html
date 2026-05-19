@@ -19,6 +19,9 @@
   <!-- Icon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
 
+  <!-- Apply saved theme before CSS loads to prevent flash -->
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
+
   <!-- Design system — load variables first, then consume them -->
   <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/base.css">
@@ -54,17 +57,22 @@
         <li><a href="#contact"    class="nav-link">Contact</a></li>
       </ul>
 
-      <button
-        class="navbar__burger"
-        id="burgerBtn"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        aria-controls="navDrawer"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="navbar__right">
+        <button class="navbar__theme" id="themeToggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-sun" id="themeIcon"></i>
+        </button>
+        <button
+          class="navbar__burger"
+          id="burgerBtn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="navDrawer"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -544,6 +552,25 @@
         cursorGlow.style.top  = e.clientY + 'px';
       }, { passive: true });
     }
+
+    /* ---- Dark / light mode toggle ---- */
+    (function () {
+      var htmlEl  = document.documentElement;
+      var toggle  = document.getElementById('themeToggle');
+      var icon    = document.getElementById('themeIcon');
+
+      function applyTheme(theme) {
+        htmlEl.setAttribute('data-theme', theme);
+        icon.className = theme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        localStorage.setItem('theme', theme);
+      }
+
+      applyTheme(localStorage.getItem('theme') || 'dark');
+
+      toggle.addEventListener('click', function () {
+        applyTheme(htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+      });
+    })();
   </script>
 
 </body>

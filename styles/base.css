@@ -17,6 +17,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--t-slow), color var(--t-slow);
 }
 
 ::selection { background: var(--accent); color: #000; }
@@ -139,4 +140,8 @@ body::before {
   z-index: 1;
   transform: translate(-50%, -50%);
   transition: left .12s ease, top .12s ease;
+}
+
+[data-theme="light"] .cursor-glow {
+  background: radial-gradient(ellipse, rgba(0,153,170,0.07), transparent 68%);
 }

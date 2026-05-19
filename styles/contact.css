@@ -29,6 +29,10 @@
   background: rgba(11, 14, 36, 0.96);
 }
 
+[data-theme="light"] .contact-card:hover {
+  background: rgba(255, 255, 255, 0.96);
+}
+
 /* Icon square */
 .contact-card__icon {
   width: 50px; height: 50px;

@@ -116,6 +116,11 @@
 .icon-figma     { color: #8b5cf6; }
 .icon-tool      { color: #00f7ff; }
 
+/* ---- Light mode overrides ---- */
+[data-theme="light"] .skill-icon {
+  background: linear-gradient(145deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 560px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
