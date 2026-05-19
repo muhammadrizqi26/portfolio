@@ -1,0 +1,85 @@
+/* ================================================================
+   DESIGN TOKENS — single source of truth for the entire portfolio
+   ================================================================ */
+:root {
+  /* ---- Backgrounds ---- */
+  --bg-0:          #060818;
+  --bg-1:          #090d24;
+  --bg-card:       rgba(11, 14, 36, 0.82);
+  --bg-card-solid: #0b0e24;
+
+  /* ---- Accent ---- */
+  --accent:        #00f7ff;
+  --accent-2:      #6366f1;
+  --accent-3:      #8b5cf6;
+  --accent-dim:    rgba(0, 247, 255, 0.10);
+  --accent-border: rgba(0, 247, 255, 0.22);
+  --grad-accent:   linear-gradient(135deg, var(--accent) 0%, var(--accent-3) 100%);
+  --grad-soft:     linear-gradient(135deg, rgba(0,247,255,0.06) 0%, rgba(139,92,246,0.06) 100%);
+
+  /* ---- Text ---- */
+  --text-1: #eef2ff;
+  --text-2: #c4cfea;
+  --text-3: #8898b3;
+  --text-4: #536178;
+
+  /* ---- Borders ---- */
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-light: rgba(255, 255, 255, 0.13);
+
+  /* ---- Typography scale ---- */
+  --font: 'Poppins', sans-serif;
+  --tx-2xs: 0.65rem;
+  --tx-xs:  0.75rem;
+  --tx-sm:  0.875rem;
+  --tx-base:1rem;
+  --tx-lg:  1.125rem;
+  --tx-xl:  1.25rem;
+  --tx-2xl: 1.5rem;
+  --tx-3xl: 1.875rem;
+  --tx-4xl: 2.25rem;
+  --tx-5xl: 3rem;
+  --tx-6xl: 3.75rem;
+  --tx-7xl: 4.5rem;
+
+  /* ---- Spacing scale ---- */
+  --s1:  0.25rem;
+  --s2:  0.5rem;
+  --s3:  0.75rem;
+  --s4:  1rem;
+  --s5:  1.25rem;
+  --s6:  1.5rem;
+  --s8:  2rem;
+  --s10: 2.5rem;
+  --s12: 3rem;
+  --s16: 4rem;
+  --s20: 5rem;
+  --s24: 6rem;
+
+  /* ---- Border radius ---- */
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   16px;
+  --r-xl:   22px;
+  --r-2xl:  30px;
+  --r-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --sh-sm:     0 2px 8px rgba(0,0,0,0.35);
+  --sh-md:     0 4px 20px rgba(0,0,0,0.45);
+  --sh-lg:     0 8px 40px rgba(0,0,0,0.55);
+  --sh-accent: 0 0 28px rgba(0,247,255,0.18);
+  --sh-card:   0 4px 24px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+
+  /* ---- Transitions ---- */
+  --t-fast:   150ms ease;
+  --t-base:   280ms ease;
+  --t-slow:   480ms ease;
+  --t-spring: 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---- Layout ---- */
+  --max-w:  1120px;
+  --pad-x:  clamp(1.25rem, 5vw, 4.5rem);
+  --pad-y:  clamp(4.5rem, 9vw, 7rem);
+  --nav-h:  70px;
+}

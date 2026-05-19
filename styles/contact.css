@@ -1,0 +1,83 @@
+/* ================================================================
+   CONTACT — social platform link cards
+   ================================================================ */
+
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+  max-width: 520px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--s5);
+  padding: var(--s5) var(--s6);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-spring), background var(--t-base);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--sh-accent);
+  transform: translateX(6px);
+  background: rgba(11, 14, 36, 0.96);
+}
+
+/* Icon square */
+.contact-card__icon {
+  width: 50px; height: 50px;
+  border-radius: var(--r-md);
+  background: var(--grad-soft);
+  border: 1px solid var(--accent-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--tx-2xl);
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform var(--t-spring);
+}
+
+.contact-card:hover .contact-card__icon {
+  transform: scale(1.08) rotate(-5deg);
+}
+
+/* Text block */
+.contact-card__info { flex: 1; min-width: 0; }
+
+.contact-card__platform {
+  font-size: var(--tx-xs);
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 2px;
+}
+
+.contact-card__handle {
+  font-size: var(--tx-base);
+  font-weight: 600;
+  color: var(--text-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Arrow chevron */
+.contact-card__arrow {
+  color: var(--text-4);
+  font-size: var(--tx-sm);
+  transition: color var(--t-base), transform var(--t-spring);
+  flex-shrink: 0;
+}
+
+.contact-card:hover .contact-card__arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}

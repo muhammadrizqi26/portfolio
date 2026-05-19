@@ -1,0 +1,142 @@
+/* ================================================================
+   BASE — reset, global defaults, shared layout utilities
+   ================================================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg-0);
+  color: var(--text-1);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--accent); color: #000; }
+
+img  { max-width: 100%; display: block; }
+a    { text-decoration: none; color: inherit; }
+ul   { list-style: none; }
+button { border: none; background: none; cursor: pointer; font: inherit; }
+
+/* ---- Scroll progress bar ---- */
+.scroll-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--grad-accent);
+  z-index: 9999;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* ---- Subtle noise texture overlay ---- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.022;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- Section wrapper ---- */
+.section-wrap {
+  padding: var(--pad-y) var(--pad-x);
+  max-width: calc(var(--max-w) + var(--pad-x) * 2);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---- Section heading block ---- */
+.s-header { margin-bottom: var(--s12); }
+
+.s-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--tx-xs);
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s3);
+}
+
+.s-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.s-title {
+  font-size: clamp(var(--tx-3xl), 5vw, var(--tx-5xl));
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.s-title em {
+  font-style: normal;
+  background: var(--grad-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Chip / badge pill ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  font-size: var(--tx-xs);
+  font-weight: 500;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  white-space: nowrap;
+}
+
+/* ---- Fade-up scroll animation ---- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-up[data-delay="1"] { transition-delay: .10s; }
+.fade-up[data-delay="2"] { transition-delay: .20s; }
+.fade-up[data-delay="3"] { transition-delay: .30s; }
+.fade-up[data-delay="4"] { transition-delay: .40s; }
+.fade-up[data-delay="5"] { transition-delay: .50s; }
+
+/* ---- Cursor glow ---- */
+.cursor-glow {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0,247,255,0.045), transparent 68%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: left .12s ease, top .12s ease;
+}
